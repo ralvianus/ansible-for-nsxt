@@ -4,7 +4,7 @@
 #
 # Playbook to register Compute Managers with NSX Appliance
 #
-- hosts: 127.0.0.1
+- hosts: 10.152.64.132:44321
   connection: local
   become: yes
   vars_files:
