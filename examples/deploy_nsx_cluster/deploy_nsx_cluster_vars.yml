@@ -9,7 +9,7 @@
   # Common NSX Appliance variables
   #
   "nsx_username": "admin",
-  "nsx_password": "myPassword!myPassword!",
+  "nsx_password": "VMware1!VMware1!",
   "validate_certs": False,
 
   #
@@ -24,23 +24,23 @@
   # on different subnets, add node specific details in the blocks below and
   # use them in the playbooks instead.
   #
-  "domain": "mylab.local",
+  "domain": "corp.local",
   "netmask": "255.255.224.0",
-  "gateway": "10.114.200.1",
-  "dns_server": "10.114.200.8",
-  "ntp_server": "10.114.200.8",
+  "gateway": "192.168.110.1",
+  "dns_server": "192.168.110.10",
+  "ntp_server": "192.168.110.10",
 
   #
   # First NSX appliance node. Defined separate based on the consumption.
   # Accepts both IP (IPv4) and FQDN for 'mgmt_ip'
   #
   "nsx_node1": {
-    "hostname": "mynsx-01.mylab.local",
-    "mgmt_ip": "10.114.200.11",
-    "datacenter": "Datacenter",
-    "cluster": "Management",
-    "datastore": "datastore1",
-    "portgroup": "VM Network"
+    "hostname": "nsxapp-01a.corp.local",
+    "mgmt_ip": "192.168.110.201",
+    "datacenter": "DC-SiteA",
+    "cluster": "Mgmt-Edge-Cluster",
+    "datastore": "ds-site-a-nfs02",
+    "portgroup": "LabNet"
   },
 
   #
@@ -76,11 +76,11 @@
   "compute_managers": [
     {
       "display_name": "vcenter",
-      "mgmt_ip": "10.114.200.6",
+      "mgmt_ip": "192.168.110.22",
       "origin_type": "vCenter",
       "credential_type": "UsernamePasswordLoginCredential",
-      "username": "administrator@mylab.local",
-      "password": "myPassword!"
+      "username": "administrator@corp.local",
+      "password": "VMware1!"
     }
   ]
 }
